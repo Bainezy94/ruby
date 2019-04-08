@@ -13,26 +13,23 @@ waters_sell = 6
 puts "What would you like to drink?"
 val = gets.chomp
 
-if val.include? "cocktail"
+case val
+when "cocktail"
     cocktails_count += 1
-end
 
-if val.include? "beer"
+when "beer"
     beers_count += 1
-end
 
-if val.include? "water"
+when "water"
     waters_count += 1
 end
+
 
 puts "The order is #{cocktails_count} cocktails, #{beers_count} beers & #{waters_count} waters."
 
 cocktails_profit = cocktails_count * (cocktails_sell - cocktails_cost)
-
 beers_profit = beers_count * (beers_sell - beers_cost)
-
 waters_profit = waters_count * (waters_sell - waters_cost)
-
 total_profit = sprintf("$%2.2f", cocktails_profit + beers_profit + waters_profit)
 
 puts "Total Profit is #{total_profit}"
